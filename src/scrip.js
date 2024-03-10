@@ -6,6 +6,7 @@ class Perfil {
 		this.email = email;
 		this.contrasegna = contrasegna;
 		this.videojuego = videojuego;
+		this.membresias = [];
 	}
 	modificar_perfil(
 		nombre = this.nombre,
@@ -15,6 +16,12 @@ class Perfil {
 		this.nombre = nombre;
 		this.apellido = apellido;
 		this.videojuego = videojuego;
+	}
+	afiliarse_club(club) {
+		this.clubs.push(club);
+	}
+	salirse_club(club) {
+		this.clubs.slice(this.clubs.indexOf(club), 1);
 	}
 }
 class Videojuego {
@@ -36,5 +43,16 @@ class Club {
 }
 function Cargar_datos() {}
 function Registrar_usuario() {
-	document.getElementById('id').value;
+	nombre = document.getElementById('nombre').value;
+	apellido = document.getElementById('apellido').value;
+	usuario = document.getElementById('usuario').value;
+	email = document.getElementById('email').value;
+	password = document.getElementById('password').value;
+	jeugo = document.getElementById('juego').value;
+	if (nombre && apellido && usuario && email && password && juego) {
+		Perfil(nombre, apellido, usuario, email, password, juego);
+	} else {
+		alert('Por favor, completa todos los campos');
+		return;
+	}
 }
