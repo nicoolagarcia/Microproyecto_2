@@ -48,6 +48,7 @@ function Cargar_datos() {
 	Cargar_datos_usuarios();
 	Cargar_datos_clubs();
 	Cargar_datos_juegos();
+	localStorage.setItem('objetos_cargados', true);
 }
 function Cargar_datos_usuarios() {
 	const usuarios = localStorage.getItem('usuarios');
