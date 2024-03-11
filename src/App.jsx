@@ -4,7 +4,7 @@ import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 /* import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg' */
-import 'App.css'
+import './css/App.css'
 
 library.add(faEnvelope, faLock)
 
@@ -59,12 +59,18 @@ function App() {
                   <a href="#">Has olvidado tu contraseña?</a>
                 </label>
               </div>
+              <div className='input-contenedor'>
+                <FontAwesomeIcon icon="fa-brands fa-facebook" className='i'/>
+                <FontAwesomeIcon icon="fa-solid fa-lock" className='i'/>
+                <input type="password" required/>
+                <label htmlFor="#">Contraseña</label>
+              </div>
             </form>
 
             <div>
-              <button>Acceder</button>
+              <button>Acceder <a href="src/Inicio.html">si</a></button>
               <div className='registrar'>
-                <p>No tienes cuenta? <a href="App1.html">Crear Cuenta</a></p>
+                <p>No tienes cuenta? <a href="src/App1.html">Crear Cuenta</a></p>
               </div>
             </div>
           </div>
