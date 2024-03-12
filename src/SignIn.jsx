@@ -22,6 +22,7 @@ function SignIn() {
 				alert(err.code);
 			});
 	};
+	const handleGoogle = async () => {};
 	return (
 		<>
 			<head>
@@ -51,22 +52,20 @@ function SignIn() {
 									<a href="#">Has olvidado tu contraseña?</a>
 								</label>
 							</div>
-							<div className="input-contenedor">
-								<FontAwesomeIcon icon="fa-brands fa-facebook" className="i" />
-								<FontAwesomeIcon icon="fa-solid fa-lock" className="i" />
-								<input id="password" name="password" type="password" required />
-								<label htmlFor="#">Contraseña</label>
+
+							<div>
+								<button type="submit">Acceder</button>
 							</div>
 						</form>
 
 						<div>
-							<button type="submit">
-								Acceder <a href="src/Inicio.html">si</a>
-							</button>
+							<button onClick={handleGoogle}>Acceder con Google</button>
 							<div className="registrar">
 								<p>
 									No tienes cuenta?{' '}
-									<Link to="SignUp" /* src/App1.html */>Crear Cuenta</Link>
+									<Link to="/SignUp" replace>
+										Crear Cuenta
+									</Link>
 								</p>
 							</div>
 						</div>

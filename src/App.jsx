@@ -4,23 +4,27 @@ import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import './css/App.css';
-import { SignIn } from './SignIn';
-import { SignUp } from './SignUp';
-import { Inicio } from './Inicio';
-import { Perfil } from './Perfil';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
+import Inicio from './Inicio';
+import Perfil from './Perfil';
 
 library.add(faEnvelope, faLock);
 
 function App() {
 	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/SignIn" element={<SignIn />} />
-				<Route path="/SignUp" element={<SignUp />} />
-				<Route path="/" element={<Inicio />} />
-				<Route path="/Perfil" element={<Perfil />} />
-			</Routes>
-		</BrowserRouter>
+		<div>
+			<BrowserRouter>
+				<Routes>
+					<Route index element={<SignIn />} />
+					<Route path="/SignIn" element={<SignIn />} />
+					<Route path="/SignUp" element={<SignUp />} />
+					<Route path="/Inicio" element={<Inicio />} />
+					<Route path="/Perfil" element={<Perfil />} />
+					<Route path="*" element={<h1>Not Found </h1>} />
+				</Routes>
+			</BrowserRouter>
+		</div>
 	);
 }
 

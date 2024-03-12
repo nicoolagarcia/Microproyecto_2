@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getFirestore, collection } from 'firebase/app';
+/* import { getFirestore, collection } from 'firebase/app'; */
 import { getAuth } from 'firebase/auth';
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -21,7 +21,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const database = getAuth(app);
-const db = getFirestore(app);
+/* const db = getFirestore(app);
 const usuarios = collection(db, 'usuarios');
 const clubs = collection(db, 'clubs');
 const juegos = collection(db, 'juegos');
@@ -29,3 +29,4 @@ localStorage.clear();
 localStorage.setItem('usuarios', JSON.stringify(usuarios));
 localStorage.setItem('clubs', JSON.stringify(clubs));
 localStorage.setItem('juegos', JSON.stringify(juegos));
+ */

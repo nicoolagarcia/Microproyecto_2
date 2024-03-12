@@ -81,7 +81,10 @@ function SignUp() {
 								<button type="submit">Listo</button>
 								<div className="registrar">
 									<p>
-										Ya tienes cuenta? <Link to="SignIn">Iniciar Sesion</Link>
+										Ya tienes cuenta?{' '}
+										<Link to="/SignIn" replace>
+											Iniciar Sesion
+										</Link>
 									</p>
 								</div>
 							</div>

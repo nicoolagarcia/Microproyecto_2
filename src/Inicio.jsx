@@ -44,9 +44,13 @@ function Inicio() {
 									</a>
 								</div>
 								<nav id="navegacion" className="navegacion">
-									<Link to="Inicio">Inicio</Link>
+									<Link to="/Inicio" replace>
+										Inicio
+									</Link>
 									<a href="#clubes">Clubes</a>
-									<Link to="Perfil">Perfil</Link>
+									<Link to="/Perfil" replace>
+										Perfil
+									</Link>
 								</nav>
 							</div>
 						</div>

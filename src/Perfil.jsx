@@ -35,7 +35,9 @@ function Perfil() {
 									</button>
 								</div>
 								<button type="button" className="boton-portada">
-									<Link to="Inicio">Inicio</Link>
+									<Link to="/Inicio" replace>
+										Inicio
+									</Link>
 								</button>
 							</div>
 						</div>
