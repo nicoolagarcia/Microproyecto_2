@@ -1,4 +1,4 @@
-import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Inicio() {
 	return (
@@ -43,9 +43,9 @@ function Inicio() {
 									</a>
 								</div>
 								<nav id="navegacion" className="navegacion">
-									<a href="Inicio.html">Inicio</a>
+									<Link to="Inicio">Inicio</Link>
 									<a href="#clubes">Clubes</a>
-									<a href="perfil.html">Perfil</a>
+									<Link to="Perfil">Perfil</Link>
 								</nav>
 							</div>
 						</div>
