@@ -12,6 +12,8 @@ import './css/App.css';
 import { database } from './firebase.js';
 import { SignIn } from './SignIn.jsx';
 import { SignUp } from './SignUp.jsx';
+import { Inicio } from './Inicio.jsx';
+import { Perfil } from './Perfil.jsx';
 
 library.add(faEnvelope, faLock);
 

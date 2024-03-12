@@ -38,7 +38,7 @@ function Perfil() {
 									</button>
 								</div>
 								<button type="button" className="boton-portada">
-									<a href="Inicio.html">Inicio</a>
+									<Link to="Inicio">Inicio</Link>
 								</button>
 							</div>
 						</div>
