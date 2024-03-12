@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { signInWithEmailAndPassword } from 'firebase/auth';
 import './css/App.css';
-import { database } from './firebase.js';
 
 library.add(faEnvelope, faLock);
 

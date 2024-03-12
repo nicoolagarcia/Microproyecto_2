@@ -1,10 +1,4 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './css/App.css';
 import { database } from './firebase.js';

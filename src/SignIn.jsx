@@ -8,7 +8,7 @@ import { database } from './firebase.js';
 
 library.add(faEnvelope, faLock);
 
-function SingIn() {
+function SignIn() {
 	const handleSubmitSignIn = (e) => {
 		e.preventDefault();
 		const email = e.target.email.value;
@@ -77,4 +77,4 @@ function SingIn() {
 	);
 }
 
-export default SingIn;
+export default SignIn;

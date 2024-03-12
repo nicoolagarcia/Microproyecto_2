@@ -1,19 +1,13 @@
 /* import { useState } from 'react' */
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import {
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-} from 'firebase/auth';
+
 import './css/App.css';
-import { database } from './firebase.js';
-import { SignIn } from './SignIn.jsx';
-import { SignUp } from './SignUp.jsx';
-import { Inicio } from './Inicio.jsx';
-import { Perfil } from './Perfil.jsx';
+import { SignIn } from './SignIn';
+import { SignUp } from './SignUp';
+import { Inicio } from './Inicio';
+import { Perfil } from './Perfil';
 
 library.add(faEnvelope, faLock);
 
@@ -23,7 +17,7 @@ function App() {
 			<Routes>
 				<Route path="/SignIn" element={<SignIn />} />
 				<Route path="/SignUp" element={<SignUp />} />
-				<Route path="/Inicio" element={<Inicio />} />
+				<Route path="/" element={<Inicio />} />
 				<Route path="/Perfil" element={<Perfil />} />
 			</Routes>
 		</BrowserRouter>
