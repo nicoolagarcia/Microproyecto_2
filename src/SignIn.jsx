@@ -1,4 +1,5 @@
-/* import { useState } from 'react' */
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,48 +14,19 @@ import { database } from './firebase.js';
 
 library.add(faEnvelope, faLock);
 
-function App() {
-	return (
-		<BrowserRouter>
-			<Routes>
-				<Route path="/SignIn" element={<SingIn />} />
-				<Route path="/SignUp" element={<SingUp />} />
-				<Route path="/Inicio" element={<Inicio />} />
-				<Route path="/Perfil" element={<Perfil />} />
-			</Routes>
-		</BrowserRouter>
-	);
-}
-
-/* 
-  const [login, setLogin] =useState(false)
-  
-	const handleSubmitSignUp = (e) => {
+function SingIn() {
+	const handleSubmitSignIn = (e) => {
 		e.preventDefault();
 		const email = e.target.email.value;
 		const password = e.target.password.value;
-			createUserWithEmailAndPassword(database, email, password)
-				.then((data) => {
-					console.log(data, 'authData');
-					history('/Inicio');
-				})
-				.catch((err) => {
-					alert(err.code);
-					setLogin(true);
-				});
-	};
-  const handleSubmitSignIn = (e) => {
-		e.preventDefault();
-		const email = e.target.email.value;
-		const password = e.target.password.value;
-      signInWithEmailAndPassword(database, email, password)
-        .then((data) => {
-          console.log(data, 'authData');
-          history('/Inicio');
-        })
-        .catch((err) => {
-          alert(err.code);
-        });
+		signInWithEmailAndPassword(database, email, password)
+			.then((data) => {
+				console.log(data, 'authData');
+				history('/Inicio');
+			})
+			.catch((err) => {
+				alert(err.code);
+			});
 	};
 	return (
 		<>
@@ -67,7 +39,7 @@ function App() {
 			<section>
 				<div className="contenedor">
 					<div className="formulario">
-						<form action="#">
+						<form onSubmit={handleSubmitSignIn} action="#">
 							<h2>Iniciar Sesión</h2>
 							<div className="input-contenedor">
 								<FontAwesomeIcon icon="fa-solid fa-envelope" className="i" />
@@ -94,12 +66,13 @@ function App() {
 						</form>
 
 						<div>
-							<button>
+							<button type="submit">
 								Acceder <a href="src/Inicio.html">si</a>
 							</button>
 							<div className="registrar">
 								<p>
-									No tienes cuenta? <a href="src/App1.html">Crear Cuenta</a>
+									No tienes cuenta?{' '}
+									<Link to="SignUp" /* src/App1.html */>Crear Cuenta</Link>
 								</p>
 							</div>
 						</div>
@@ -108,6 +81,6 @@ function App() {
 			</section>
 		</>
 	);
- */
+}
 
-export default App;
+export default SingIn;
