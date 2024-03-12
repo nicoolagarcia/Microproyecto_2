@@ -1,14 +1,8 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import {
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-} from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import './css/App.css';
 import { database } from './firebase.js';
 
@@ -43,24 +37,24 @@ function SingIn() {
 							<h2>Iniciar Sesión</h2>
 							<div className="input-contenedor">
 								<FontAwesomeIcon icon="fa-solid fa-envelope" className="i" />
-								<input type="email" required />
+								<input id="email" name="email" type="email" required />
 								<label htmlFor="#">Email</label>
 							</div>
 							<div className="input-contenedor">
 								<FontAwesomeIcon icon="fa-solid fa-lock" className="i" />
-								<input type="password" required />
+								<input id="password" name="password" type="password" required />
 								<label htmlFor="#">Contraseña</label>
 							</div>
 							<div className="olvidar">
 								<label htmlFor="#">
-									<input type="checkbox" />
+									<input id="checkbox" name="checkbox" type="checkbox" />
 									<a href="#">Has olvidado tu contraseña?</a>
 								</label>
 							</div>
 							<div className="input-contenedor">
 								<FontAwesomeIcon icon="fa-brands fa-facebook" className="i" />
 								<FontAwesomeIcon icon="fa-solid fa-lock" className="i" />
-								<input type="password" required />
+								<input id="password" name="password" type="password" required />
 								<label htmlFor="#">Contraseña</label>
 							</div>
 						</form>

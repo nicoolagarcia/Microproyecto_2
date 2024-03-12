@@ -5,16 +5,11 @@ import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import {
-	createUserWithEmailAndPassword,
-	signInWithEmailAndPassword,
-} from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import './css/App.css';
 import { database } from './firebase.js';
 
 function SignUp() {
-	const [login, setLogin] = useState(false);
-
 	const handleSubmitSignUp = (e) => {
 		e.preventDefault();
 		const email = e.target.email.value;
@@ -26,7 +21,6 @@ function SignUp() {
 			})
 			.catch((err) => {
 				alert(err.code);
-				setLogin(true);
 			});
 	};
 	return (
@@ -50,32 +44,42 @@ function SignUp() {
 								<h2>Crear Cuenta</h2>
 								<div className="input-contenedor">
 									<i className="fa-solid fa-circle-info"></i>
-									<input id="nombre" type="nombre" required />
+									<input id="nombre" name="nombre" type="nombre" required />
 									<label htmlFor="#">Nombre</label>
 								</div>
 								<div className="input-contenedor">
 									<i className="fa-solid fa-circle-info"></i>
-									<input id="apellido" type="apellido" required />
+									<input
+										id="apellido"
+										name="apellido"
+										type="apellido"
+										required
+									/>
 									<label htmlFor="#">Apellido</label>
 								</div>
 								<div className="input-contenedor">
 									<i className="fa-solid fa-user"></i>
-									<input id="usuario" type="usuario" required />
+									<input id="usuario" name="usuario" type="usuario" required />
 									<label htmlFor="#">Usuario</label>
 								</div>
 								<div className="input-contenedor">
 									<i className="fa-solid fa-circle-info"></i>
-									<input id="email" type="email" required />
+									<input id="email" name="email" type="email" required />
 									<label htmlFor="#">Email</label>
 								</div>
 								<div className="input-contenedor">
 									<i className="fa-solid fa-lock"></i>
-									<input id="password" type="password" required />
+									<input
+										id="password"
+										name="password"
+										type="password"
+										required
+									/>
 									<label htmlFor="#">Contraseña</label>
 								</div>
 								<div className="input-contenedor">
 									<i className="fa-solid fa-ghost"></i>
-									<input id="juego" type="juego" required />
+									<input id="juego" name="juego" type="juego" required />
 									<label htmlFor="#">Videojuego Favorito</label>
 								</div>
 							</form>
@@ -83,7 +87,7 @@ function SignUp() {
 								<button type="submit">Listo</button>
 								<div className="registrar">
 									<p>
-										Ya tienes cuenta? <a href="App.jsx">Iniciar Sesion</a>
+										Ya tienes cuenta? <Link to="SignIn">Iniciar Sesion</Link>
 									</p>
 								</div>
 							</div>

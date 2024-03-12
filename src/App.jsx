@@ -10,6 +10,8 @@ import {
 } from 'firebase/auth';
 import './css/App.css';
 import { database } from './firebase.js';
+import { SignIn } from './SignIn.jsx';
+import { SignUp } from './SignUp.jsx';
 
 library.add(faEnvelope, faLock);
 
@@ -17,8 +19,8 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Routes>
-				<Route path="/SignIn" element={<SingIn />} />
-				<Route path="/SignUp" element={<SingUp />} />
+				<Route path="/SignIn" element={<SignIn />} />
+				<Route path="/SignUp" element={<SignUp />} />
 				<Route path="/Inicio" element={<Inicio />} />
 				<Route path="/Perfil" element={<Perfil />} />
 			</Routes>
